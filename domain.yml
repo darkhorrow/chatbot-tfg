@@ -1,31 +1,18 @@
 intents:
   - greet
-  - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_should_ask_questions:
+    - text: "¡Hola! soy P.E.P.A, ¿me permite preguntarle unas cuantas preguntas?"
+    - text: "¡Saludos! soy P.E.P.A, ¿puedo preguntarle una serie de cuestiones con respecto a usted?"
+  utter_ask_questions:
+    - text: "¡Excelente! Comencemos pues."
+    - text: "De acuerdo, comencemos pues."
+  utter_bye:
+    - text: "¡Nos vemos!"
+    - text: "¡Adiós!"
 
 session_config:
   session_expiration_time: 60

@@ -1,6 +1,6 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
+language: es
 pipeline:
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
