@@ -1,23 +1,34 @@
 ## intent:greet
+- hola
+- buenas
 - hey
-- hello
-- hi
-- good morning
-- good evening
-- hey there
+- saludos
+- buenas tardes
+- buenos días
 
 ## intent:affirm
-- yes
-- indeed
-- of course
-- that sounds good
-- correct
+- sí
+- claro
+- por supuesto
+- de acuerdo
+- ok
 
 ## intent:deny
 - no
-- never
-- I don't think so
-- don't like that
-- no way
-- not really
+- no lo creo
+- no quiero
+- de ninguna manera
 
+## intent:answer_question_1
+- siempre
+- casi siempre
+- de vez en cuando
+- nunca
+- habitualmente
+- en raras ocasiones
+- con bastante frecuencia
+- no muchas veces
+- bastantes veces
+- muy a menudo
+- poco a menudo
+- alguna que otra vez

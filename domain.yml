@@ -2,14 +2,16 @@ intents:
   - greet
   - affirm
   - deny
+  - answer_question_1
 
 responses:
   utter_should_ask_questions:
     - text: "¡Hola! soy P.E.P.A, ¿me permite preguntarle unas cuantas preguntas?"
     - text: "¡Saludos! soy P.E.P.A, ¿puedo preguntarle una serie de cuestiones con respecto a usted?"
-  utter_ask_questions:
-    - text: "¡Excelente! Comencemos pues."
-    - text: "De acuerdo, comencemos pues."
+  utter_ask_question1:
+    - text: "¡Excelente! Comencemos pues. \n Durante las dos últimas semanas... ¿con qué frecuencia ha tenido poco interés o placer en realziar determiandas actividades?"
+  utter_ask_question_2:
+    - text: "De acuerdo. Siguiente pregunta. ¿Con qué frecuencia se ha sentido decaído/a o deprimido/a?"
   utter_bye:
     - text: "¡Nos vemos!"
     - text: "¡Adiós!"
