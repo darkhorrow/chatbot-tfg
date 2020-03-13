@@ -1,34 +1,24 @@
-## intent:greet
-- hola
-- buenas
-- hey
-- saludos
-- buenas tardes
-- buenos días
-
-## intent:affirm
-- sí
-- claro
-- por supuesto
-- de acuerdo
-- ok
-
-## intent:deny
-- no
-- no lo creo
-- no quiero
-- de ninguna manera
-
-## intent:answer_question_1
-- siempre
-- casi siempre
-- de vez en cuando
+## intent:low
 - nunca
-- habitualmente
-- en raras ocasiones
-- con bastante frecuencia
-- no muchas veces
-- bastantes veces
-- muy a menudo
-- poco a menudo
-- alguna que otra vez
+- nada
+- muy pocas veces
+- jamás
+
+## intent:low-medium
+- pocas veces
+- con poca frecuencia
+
+## intent:medium
+- en ocasiones
+- de vez en cuando
+
+## intent:medium-high
+- un par de veces en semana
+- casi siempre
+- en bastantes ocasiones
+
+## intent:high
+- todos los días
+- siempre
+- muchísimo
+
