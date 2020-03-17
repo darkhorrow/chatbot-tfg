@@ -5,17 +5,6 @@ intents:
   - medium
   - medium-high
   - high
-  - answer
-
-slots:
-  answer:
-    type: categorical
-    values:
-      - low
-      - low-medium
-      - medium
-      - medium-high
-      - high
 
 responses:
   utter_ask_question_1:

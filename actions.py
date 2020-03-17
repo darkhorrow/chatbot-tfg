@@ -11,7 +11,6 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
 
 
 class ActionFeedbackLow(Action):
@@ -21,7 +20,7 @@ class ActionFeedbackLow(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="LOW")
-        return [SlotSet("answer", "low")]
+        return []
 
 
 class ActionFeedbackLowMedium(Action):
@@ -31,7 +30,7 @@ class ActionFeedbackLowMedium(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="LOW-MEDIUM")
-        return [SlotSet("answer", "low-medium")]
+        return []
 
 
 class ActionFeedbackMedium(Action):
@@ -41,7 +40,7 @@ class ActionFeedbackMedium(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="MEDIUM")
-        return [SlotSet("answer", "medium")]
+        return []
 
 
 class ActionFeedbackMediumHigh(Action):
@@ -51,7 +50,7 @@ class ActionFeedbackMediumHigh(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="MEDIUM-HIGH")
-        return [SlotSet("answer", "medium-high")]
+        return []
 
 
 class ActionFeedbackHigh(Action):
@@ -61,4 +60,4 @@ class ActionFeedbackHigh(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="HIGH")
-        return [SlotSet("answer", "high")]
+        return []
