@@ -8,15 +8,25 @@ intents:
   - answer
 
 slots:
-  answer_1:
-    type: text
+  answer:
+    type: categorical
+    values:
+      - low
+      - low-medium
+      - medium
+      - medium-high
+      - high
 
 responses:
   utter_ask_question_1:
     - text: "Durante las dos últimas semanas... ¿con qué frecuencia ha tenido poco interés o placer en realziar determiandas actividades?"
 
 actions:
-- action_give_feedback_1
+- action_give_feedback_low
+- action_give_feedback_low_medium
+- action_give_feedback_medium
+- action_give_feedback_medium_high
+- action_give_feedback_high
 
 session_config:
   session_expiration_time: 60
