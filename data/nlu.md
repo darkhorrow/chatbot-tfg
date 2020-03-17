@@ -22,3 +22,7 @@
 - siempre
 - muchísimo
 
+## intent:greet
+- hola
+- buenas
+- saludos

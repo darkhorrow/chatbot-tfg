@@ -1,13 +1,7 @@
-## happy path start questions
+## ask question 1
 * greet
-  - utter_should_ask_questions
-* affirm
-  - utter_ask_question1
-* answer_question_1
-  - utter_ask_question_2
-
-## sad path start questions
-* greet
-  - utter_should_ask_questions
-* deny
-  - utter_bye
+    - utter_ask_question_1
+* answer{"answer_1": "en ocasiones"}
+    - slot{"answer_1": "en ocasiones"}
+    - action_give_feedback_1
+    
