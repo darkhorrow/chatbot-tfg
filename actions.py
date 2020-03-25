@@ -12,52 +12,38 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
+count = 0
+questions = ["Primera pregunta",
+             "Segunda pregunta",
+             "Tercera pregunta",
+             "Cuarta pregunta",
+             "Quinta pregunta",
+             "Sexta pregunta",
+             "Séptima pregunta",
+             "Octava pregunta",
+             "Novena pregunta",
+             ]
 
-class ActionFeedbackLow(Action):
+
+class ActionRun(Action):
 
     def name(self) -> Text:
-        return "action_give_feedback_low"
+        return "action_run"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="LOW")
+        global count
+        dispatcher.utter_message(text=questions[count])
+        count += 1
         return []
 
 
-class ActionFeedbackLowMedium(Action):
+class ActionAskQuestion(Action):
 
     def name(self) -> Text:
-        return "action_give_feedback_low_medium"
+        return "action_ask_question"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="LOW-MEDIUM")
-        return []
-
-
-class ActionFeedbackMedium(Action):
-
-    def name(self) -> Text:
-        return "action_give_feedback_medium"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="MEDIUM")
-        return []
-
-
-class ActionFeedbackMediumHigh(Action):
-
-    def name(self) -> Text:
-        return "action_give_feedback_medium_high"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="MEDIUM-HIGH")
-        return []
-
-
-class ActionFeedbackHigh(Action):
-
-    def name(self) -> Text:
-        return "action_give_feedback_high"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="HIGH")
+        global count
+        dispatcher.utter_message(text=questions[count])
+        count += 1
         return []

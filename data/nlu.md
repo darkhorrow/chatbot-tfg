@@ -21,8 +21,7 @@
 - todos los días
 - siempre
 - muchísimo
+- muchas veces
 
-## intent:greet
-- hola
-- buenas
-- saludos
+## intent:run
+- run

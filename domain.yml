@@ -1,21 +1,29 @@
 intents:
-  - greet
+  - run
   - low
   - low-medium
   - medium
   - medium-high
   - high
 
-responses:
-  utter_ask_question_1:
-    - text: "Durante las dos últimas semanas... ¿con qué frecuencia ha tenido poco interés o placer en realziar determiandas actividades?"
-
 actions:
-- action_give_feedback_low
-- action_give_feedback_low_medium
-- action_give_feedback_medium
-- action_give_feedback_medium_high
-- action_give_feedback_high
+  - action_run
+  - action_ask_question
+
+responses:
+  utter_low_feedback:
+    - text: "Me alegra mucho. ¡Continúa así!"
+    - text: "¡Sigue así!"
+  utter_low_medium_feedback:
+    - text: "Más o menos lo llevas bien, pero tengo la certeza de que puedes sentirte mejor."
+    - text: "Parece que podría ser mejor, pero que no te desanime, ¡casi lo tienes!"
+  utter_medium_feedback:
+    - text: "Todos tenemos de vez en cuando un mal día ¡Ánimo!"
+    - text: "¡No dejes que un mal día te desanime!"
+  utter_medium_high_feedback:
+    - text: "Uy, eso no tiene buena pinta. Hay que procurar cambiar esa actitud."
+  utter_high_feedback:
+    - text: "¡Eso es terrible! ¡Deberías evitar este comportamiento a toda costa!"
 
 session_config:
   session_expiration_time: 60

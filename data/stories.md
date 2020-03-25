@@ -1,29 +1,28 @@
+## run
+* run
+    - action_run
+
 ## ask question 1 low intent
-* greet
-    - utter_ask_question_1
 * low
-    - action_give_feedback_low
+    - utter_low_feedback
+    - action_ask_question
     
 ## ask question 1 low-medium intent
-* greet
-    - utter_ask_question_1
 * low-medium
-    - action_give_feedback_low_medium
+    - utter_low_medium_feedback
+    - action_ask_question
     
 ## ask question 1 medium intent
-* greet
-    - utter_ask_question_1
 * medium
-    - action_give_feedback_medium
+    - utter_medium_feedback
+    - action_ask_question
     
 ## ask question 1 medium-high intent
-* greet
-    - utter_ask_question_1
 * medium-high
-    - action_give_feedback_medium_high
+    - utter_medium_high_feedback
+    - action_ask_question
     
 ## ask question 1 high intent
-* greet
-    - utter_ask_question_1
 * high
-    - action_give_feedback_high
+    - utter_high_feedback
+    - action_ask_question
