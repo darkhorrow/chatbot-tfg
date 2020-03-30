@@ -24,6 +24,8 @@ responses:
     - text: "Uy, eso no tiene buena pinta. Hay que procurar cambiar esa actitud."
   utter_high_feedback:
     - text: "¡Eso es terrible! ¡Deberías evitar este comportamiento a toda costa!"
+  utter_default:
+    - text: "No entiendo qué quieres decir, ¿podrías ser un aclararme un poco más?"
 
 session_config:
   session_expiration_time: 60
