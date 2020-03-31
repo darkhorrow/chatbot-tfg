@@ -1,5 +1,5 @@
 intents:
-  - run
+  - start
   - low
   - low-medium
   - medium
@@ -7,7 +7,6 @@ intents:
   - high
 
 actions:
-  - action_run
   - action_ask_question
 
 responses:

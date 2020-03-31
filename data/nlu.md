@@ -23,5 +23,6 @@
 - muchísimo
 - muchas veces
 
-## intent:run
-- run
+## intent:start
+- comenzar
+- empezar

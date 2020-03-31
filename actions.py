@@ -25,18 +25,6 @@ questions = ["Primera pregunta",
              ]
 
 
-class ActionRun(Action):
-
-    def name(self) -> Text:
-        return "action_run"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        global count
-        dispatcher.utter_message(text=questions[count])
-        count += 1
-        return []
-
-
 class ActionAskQuestion(Action):
 
     def name(self) -> Text:
@@ -45,5 +33,5 @@ class ActionAskQuestion(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         global count
         dispatcher.utter_message(text=questions[count])
-        count += 1
+        count = min(count + 1, 8)
         return []
