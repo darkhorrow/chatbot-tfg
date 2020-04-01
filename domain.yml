@@ -9,6 +9,13 @@ intents:
 actions:
   - action_ask_question
 
+slots:
+   question_id:
+      type: float
+      min_value: 0.0
+      max_value: 8.0
+      initial_value: 0.0
+
 responses:
   utter_low_feedback:
     - text: "Me alegra mucho. ¡Continúa así!"

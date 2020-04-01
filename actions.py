@@ -11,8 +11,8 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
-count = 0
 questions = ["Primera pregunta",
              "Segunda pregunta",
              "Tercera pregunta",
@@ -31,7 +31,6 @@ class ActionAskQuestion(Action):
         return "action_ask_question"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        global count
-        dispatcher.utter_message(text=questions[count])
-        count = min(count + 1, 8)
-        return []
+        current_question = int(tracker.get_slot('question_id'))
+        dispatcher.utter_message(text=questions[current_question])
+        return [SlotSet('question_id', min(float(current_question + 1.0), float(len(questions) - 1)))]
