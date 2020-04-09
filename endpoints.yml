@@ -17,6 +17,14 @@ action_endpoint:
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/api/tracker-stores/
 
+tracker_store:
+    type: SQL
+    dialect: "sqlite"
+    url: ""
+    db: "tracker_store.db"
+    username:
+    password:
+
 #tracker_store:
 #    type: redis
 #    url: <host of the redis instance, e.g. localhost>
