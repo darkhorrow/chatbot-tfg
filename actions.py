@@ -13,15 +13,18 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-questions = ["Primera pregunta",
-             "Segunda pregunta",
-             "Tercera pregunta",
-             "Cuarta pregunta",
-             "Quinta pregunta",
-             "Sexta pregunta",
-             "Séptima pregunta",
-             "Octava pregunta",
-             "Novena pregunta",
+questions = ["¿Con qué frecuencia tiene poco interés o placer en realizar cosas?",
+             "En las dos últimas semanas, ¿con qué frecuencia se ha sentido decaído/a, deprimido/a o sin esperanzas?",
+             "¿Qué dificultad ha tenido para conciliar el sueño o, en caso opuesto, en levantarse de la cama?",
+             "En las dos últimas semanas, ¿con qué frecuencia ha experimentado cansancio o falta de energía?",
+             "¿Con qué frecuencia cree que ha sentido falta o exceso de apetito?",
+             "En las dos últimas semanas, ¿con qué recurrencia se ha sentido mal consigo mismo/a, "
+             "que es un fracaso o qué le ha fallado a sus seres queridos?",
+             "¿Con cuánta dificultad se ha enfrentado para centrarse en actividades, como leer o ver la televisión?",
+             "¿Con qué abundancia cree que se ha movido o hablado tan despacio/rápido que otras personas "
+             "lo puedan haber notado?",
+             "En las dos últimas semanas, ¿con qué frecuencia ha tenido pensamientos que impliquen autolesión o que"
+             "impliquen que estaría mejor muerto/a?",
              ]
 
 
