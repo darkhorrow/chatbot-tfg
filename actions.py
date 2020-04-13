@@ -27,6 +27,13 @@ questions = ["¿Con qué frecuencia tiene poco interés o placer en realizar cos
              "impliquen que estaría mejor muerto/a?",
              ]
 
+feedback_responses = {"low": ["Me alegra mucho. ¡Continúa así!"],
+                      "low-medium": ["Más o menos lo llevas bien, pero tengo la certeza de que puedes sentirte mejor."],
+                      "medium": ["Todos tenemos de vez en cuando un mal día ¡Ánimo!"],
+                      "medium-high": ["Uy, eso no tiene buena pinta. Hay que procurar cambiar esa actitud."],
+                      "high": ["¡Eso es terrible! ¡Deberías evitar ese comportamiento a toda costa!"],
+                      }
+
 
 class ActionAskQuestion(Action):
 
@@ -34,6 +41,33 @@ class ActionAskQuestion(Action):
         return "action_ask_question"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        current_question = int(tracker.get_slot('question_id'))
-        dispatcher.utter_message(text=questions[current_question])
-        return [SlotSet('question_id', min(float(current_question + 1.0), float(len(questions) - 1)))]
+        if bool(tracker.get_slot('is_asking_questions')):
+            current_question = int(tracker.get_slot('question_id'))
+            user_intent = tracker.latest_message['intent'].get('name')
+            if user_intent in feedback_responses:
+                dispatcher.utter_message(text=feedback_responses[user_intent][0])
+            dispatcher.utter_message(text=questions[current_question])
+            return [SlotSet('question_id', min(float(current_question + 1.0), float(len(questions) - 1)))]
+
+
+class ActionStartQuestions(Action):
+
+    def name(self) -> Text:
+        return "action_start_questions"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Muy bien, ¡comencemos!")
+        return [SlotSet('is_asking_questions', True)]
+
+
+class ActionEndConversation(Action):
+
+    def name(self) -> Text:
+        return "action_end_conversation"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        is_asking = bool(tracker.get_slot('is_asking_questions'))
+        response = "Gracias por responder a mis preguntas :)" if is_asking \
+            else "Podemos hablar en otro momento si así lo prefiere."
+        dispatcher.utter_message(text=response)
+        return []

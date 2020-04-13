@@ -46,3 +46,22 @@
 ## intent:start
 - comenzar
 - empezar
+
+## intent:affirm
+- sí
+- ok
+- okey
+- vale
+- de acuerdo
+- me parece bien
+- adelante
+- por supuesto
+- claro
+- claro que sí
+
+## intent:deny
+- no
+- no quiero
+- de ninguna manera
+- ahora no
+- ahora no puedo
