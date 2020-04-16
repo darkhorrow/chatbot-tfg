@@ -13,7 +13,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-questions = ["¿Con qué frecuencia tiene poco interés o placer en realizar cosas?",
+MAX_FALLBACK = 2
+
+QUESTIONS = ["¿Con qué frecuencia tiene poco interés o placer en realizar cosas?",
              "En las dos últimas semanas, ¿con qué frecuencia se ha sentido decaído/a, deprimido/a o sin esperanzas?",
              "¿Qué dificultad ha tenido para conciliar el sueño o, en caso opuesto, en levantarse de la cama?",
              "En las dos últimas semanas, ¿con qué frecuencia ha experimentado cansancio o falta de energía?",
@@ -27,12 +29,23 @@ questions = ["¿Con qué frecuencia tiene poco interés o placer en realizar cos
              "impliquen que estaría mejor muerto/a?",
              ]
 
-feedback_responses = {"low": ["Me alegra mucho. ¡Continúa así!"],
+FEEDBACK_RESPONSES = {"low": ["Me alegra mucho. ¡Continúa así!"],
                       "low-medium": ["Más o menos lo llevas bien, pero tengo la certeza de que puedes sentirte mejor."],
                       "medium": ["Todos tenemos de vez en cuando un mal día ¡Ánimo!"],
                       "medium-high": ["Uy, eso no tiene buena pinta. Hay que procurar cambiar esa actitud."],
                       "high": ["¡Eso es terrible! ¡Deberías evitar ese comportamiento a toda costa!"],
                       }
+
+QUESTIONS_BUTTONS = [{"title": "Muy pocas veces", "payload": "/low"},
+                     {"title": "Pocas veces", "payload": "/low-medium"},
+                     {"title": "En ocasiones", "payload": "/medium"},
+                     {"title": "A menudo", "payload": "/medium-high"},
+                     {"title": "Muchas veces", "payload": "/high"},
+                     ]
+
+INTRO_BUTTONS = [{"title": "Sí, adelante", "payload": "/affirm"},
+                 {"title": "Ahora no", "payload": "/deny"}
+                 ]
 
 
 class ActionAskQuestion(Action):
@@ -44,10 +57,11 @@ class ActionAskQuestion(Action):
         if bool(tracker.get_slot('is_asking_questions')):
             current_question = int(tracker.get_slot('question_id'))
             user_intent = tracker.latest_message['intent'].get('name')
-            if user_intent in feedback_responses:
-                dispatcher.utter_message(text=feedback_responses[user_intent][0])
-            dispatcher.utter_message(text=questions[current_question])
-            return [SlotSet('question_id', min(float(current_question + 1.0), float(len(questions) - 1)))]
+            if user_intent in FEEDBACK_RESPONSES:
+                dispatcher.utter_message(text=FEEDBACK_RESPONSES[user_intent][0])
+            dispatcher.utter_message(text=QUESTIONS[current_question])
+            return [SlotSet('question_id', min(float(current_question + 1.0), float(len(QUESTIONS) - 1))),
+                    SlotSet('fallback_count', 0.0)]
 
 
 class ActionStartQuestions(Action):
@@ -57,7 +71,7 @@ class ActionStartQuestions(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message(text="Muy bien, ¡comencemos!")
-        return [SlotSet('is_asking_questions', True)]
+        return [SlotSet('is_asking_questions', True), SlotSet('fallback_count', 0.0)]
 
 
 class ActionEndConversation(Action):
@@ -71,3 +85,27 @@ class ActionEndConversation(Action):
             else "Podemos hablar en otro momento si así lo prefiere."
         dispatcher.utter_message(text=response)
         return []
+
+
+class ActionFallback(Action):
+
+    def name(self) -> Text:
+        return "action_fallback_management"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        is_asking = bool(tracker.get_slot('is_asking_questions'))
+        if int(tracker.get_slot('fallback_count') >= MAX_FALLBACK):
+            if is_asking:
+                dispatcher.utter_button_message(
+                    text="Sigo sin entenderte. Puedes intentar explicarlo mejor o usar una de las opciones.",
+                    buttons=QUESTIONS_BUTTONS
+                )
+            else:
+                dispatcher.utter_button_message(
+                    text="Sigo sin entenderte. Puedes intentar explicarlo mejor o usar una de las opciones.",
+                    buttons=INTRO_BUTTONS
+                )
+            return []
+        else:
+            dispatcher.utter_message(text="No te estoy entendiendo, ¿podrías decirmelo de manera más sencilla?")
+            return [SlotSet('fallback_count', tracker.get_slot('fallback_count') + 1.0)]

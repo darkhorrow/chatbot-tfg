@@ -12,6 +12,7 @@ actions:
   - action_ask_question
   - action_start_questions
   - action_end_conversation
+  - action_fallback_management
 
 slots:
    question_id:
@@ -28,8 +29,6 @@ responses:
     - text: "¡Hola! Soy P.E.P.A, un asistente virtual que contribuye al bienestar psicológico de las personas. Mi tarea es analizar tus respuestas y ayudar a los profesionales de la salud con el diagnóstico y el tratamiento de múltiples problemas de salud."
   utter_ask_question_request:
     - text: "¿Puedo realizarle unas pocas preguntas para realizar la evaluación?"
-  utter_default:
-    - text: "No entiendo qué quieres decir, ¿podrías ser un aclararme un poco más?"
 
 session_config:
   session_expiration_time: 60
