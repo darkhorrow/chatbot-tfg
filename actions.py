@@ -11,7 +11,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, FollowupAction, Restarted
 
 MAX_FALLBACK = 2
 
@@ -54,14 +54,17 @@ class ActionAskQuestion(Action):
         return "action_ask_question"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        current_question = int(tracker.get_slot('question_id'))
         if bool(tracker.get_slot('is_asking_questions')):
-            current_question = int(tracker.get_slot('question_id'))
             user_intent = tracker.latest_message['intent'].get('name')
             if user_intent in FEEDBACK_RESPONSES:
                 dispatcher.utter_message(text=FEEDBACK_RESPONSES[user_intent][0])
+            if current_question == len(QUESTIONS):
+                return [FollowupAction("action_end_conversation")]
             dispatcher.utter_message(text=QUESTIONS[current_question])
-            return [SlotSet('question_id', min(float(current_question + 1.0), float(len(QUESTIONS) - 1))),
-                    SlotSet('fallback_count', 0.0)]
+
+        return [SlotSet('question_id', float(current_question + 1.0)),
+                SlotSet('fallback_count', 0.0)]
 
 
 class ActionStartQuestions(Action):
@@ -84,7 +87,7 @@ class ActionEndConversation(Action):
         response = "Gracias por responder a mis preguntas :)" if is_asking \
             else "Podemos hablar en otro momento si así lo prefiere."
         dispatcher.utter_message(text=response)
-        return []
+        return [Restarted()]
 
 
 class ActionFallback(Action):
