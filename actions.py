@@ -1,19 +1,10 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/core/actions/#custom-actions/
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, FollowupAction, Restarted
 
-MAX_FALLBACK = 2
+MAX_FALLBACK = 1
 
 QUESTIONS = ["¿Con qué frecuencia tiene poco interés o placer en realizar cosas?",
              "En las dos últimas semanas, ¿con qué frecuencia se ha sentido decaído/a, deprimido/a o sin esperanzas?",
@@ -73,8 +64,10 @@ class ActionStartQuestions(Action):
         return "action_start_questions"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Muy bien, ¡comencemos!")
-        return [SlotSet('is_asking_questions', True), SlotSet('fallback_count', 0.0)]
+        if not bool(tracker.get_slot('is_asking_questions')):
+            dispatcher.utter_message(text="Muy bien, ¡comencemos!")
+            return [SlotSet('is_asking_questions', True), SlotSet('fallback_count', 0.0)]
+        return []
 
 
 class ActionEndConversation(Action):
