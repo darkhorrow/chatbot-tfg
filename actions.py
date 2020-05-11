@@ -1,3 +1,5 @@
+from random import randint
+
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -20,12 +22,19 @@ QUESTIONS = ["¿Con qué frecuencia tiene poco interés o placer en realizar cos
              "impliquen que estaría mejor muerto/a?",
              ]
 
-FEEDBACK_RESPONSES = {"low": ["Me alegra mucho. ¡Continúa así!"],
-                      "low-medium": ["Más o menos lo llevas bien, pero tengo la certeza de que puedes sentirte mejor."],
-                      "medium": ["Todos tenemos de vez en cuando un mal día ¡Ánimo!"],
-                      "medium-high": ["Uy, eso no tiene buena pinta. Hay que procurar cambiar esa actitud."],
-                      "high": ["¡Eso es terrible! ¡Deberías evitar ese comportamiento a toda costa!"],
-                      }
+FEEDBACK_RESPONSES = {
+    "normal_response":
+        ["Gracias por tu respuesta, me lo apunto, vamos ahora a por la siguiente pregunta.",
+         "De acuerdo, anotado, seguimos con la siguiente pregunta.",
+         "De acuerdo, seguimos con el resto de las preguntas."
+         ],
+    "intermediate_response":
+        ["Gracias, te entiendo, seguimos un poco más con la siguiente pregunta.",
+         "Gracias, ya solo nos quedan unas pocas preguntas más."
+         ],
+    "last_response":
+        ["Gracias, ya solo queda la última pregunta."],
+}
 
 QUESTIONS_BUTTONS = [{"title": "Muy pocas veces", "payload": "/low"},
                      {"title": "Pocas veces", "payload": "/low-medium"},
@@ -47,15 +56,23 @@ class ActionAskQuestion(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         current_question = int(tracker.get_slot('question_id'))
         if bool(tracker.get_slot('is_asking_questions')):
-            user_intent = tracker.latest_message['intent'].get('name')
-            if user_intent in FEEDBACK_RESPONSES:
-                dispatcher.utter_message(text=FEEDBACK_RESPONSES[user_intent][0])
+            dispatcher.utter_message(text=self.__choose_answer(current_question))
             if current_question == len(QUESTIONS):
                 return [FollowupAction("action_end_conversation")]
             dispatcher.utter_message(text=QUESTIONS[current_question])
 
         return [SlotSet('question_id', float(current_question + 1.0)),
                 SlotSet('fallback_count', 0.0)]
+
+    def __choose_answer(self, current_question) -> Text:
+        if current_question == 0 or current_question >= len(QUESTIONS):
+            return ""
+        if current_question == len(QUESTIONS) - 1:
+            return FEEDBACK_RESPONSES['last_response'][randint(0, len(FEEDBACK_RESPONSES['last_response']) - 1)]
+        elif current_question < (len(QUESTIONS) - 1)/2:
+            return FEEDBACK_RESPONSES['normal_response'][randint(0, len(FEEDBACK_RESPONSES['last_response']) - 1)]
+        else:
+            return FEEDBACK_RESPONSES['intermediate_response'][randint(0, len(FEEDBACK_RESPONSES['last_response']) - 1)]
 
 
 class ActionStartQuestions(Action):
