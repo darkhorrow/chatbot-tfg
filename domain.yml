@@ -13,12 +13,16 @@ actions:
   - action_start_questions
   - action_end_conversation
   - action_fallback_management
+  - action_update_score
 
 slots:
    question_id:
       type: float
       initial_value: 0.0
    fallback_count:
+      type: float
+      initial_value: 0.0
+   score_questions:
       type: float
       initial_value: 0.0
    is_asking_questions:
