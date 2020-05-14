@@ -135,16 +135,10 @@ class ActionFallback(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         is_asking = bool(tracker.get_slot('is_asking_questions'))
         if int(tracker.get_slot('fallback_count') >= MAX_FALLBACK):
-            if is_asking:
-                dispatcher.utter_button_message(
-                    text="Sigo sin entenderte. Puedes intentar explicarlo mejor o usar una de las opciones.",
-                    buttons=QUESTIONS_BUTTONS
-                )
-            else:
-                dispatcher.utter_button_message(
-                    text="Sigo sin entenderte. Puedes intentar explicarlo mejor o usar una de las opciones.",
-                    buttons=INTRO_BUTTONS
-                )
+            dispatcher.utter_message(
+                text="Sigo sin entenderte. Puedes intentar explicarlo mejor o usar una de las opciones.",
+                buttons=QUESTIONS_BUTTONS if is_asking else INTRO_BUTTONS
+            )
             return []
         else:
             dispatcher.utter_message(text="No te estoy entendiendo, ¿podrías decirmelo de manera más sencilla?")
