@@ -24,6 +24,25 @@ QUESTIONS = [
     "impliquen que estaría mejor muerto/a?",
 ]
 
+QUESTIONS_REPHRASE = [
+    ["Durante las últimas dos semanas, ¿con qué frecuencia te has dado cuenta de que no tenías ganas o no te sentías "
+     "a gusto al hacer actividades cotidianas?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia has notado que estabas triste o sin ilusión por el futuro?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia has tenido problemas de insomnio (tardar mucho en dormirse "
+     "o despertarse muchas veces por la noche) o, por el contrario, has dormido más de la cuenta?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia has notado que estabas fatigado(a) sin motivo aparente, "
+     "como enlentecido(a)?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia has notado que no tenías ganas de comer o, "
+     "por el contrario, has comido más de la cuenta?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia te has sentido culpable o fracasado(a) en la vida?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia has notado que no podías mantener la atención para "
+     "comprender bien lo que leías o enterarte bien de lo que veías en la tele u oías en la radio?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia te has visto muy lento en tus movimientos o al hablar o, "
+     "por el contrario, has notado que tenías movimientos de inquietud y nerviosismo?"],
+    ["Durante las últimas dos semanas, ¿con qué frecuencia has pensado en suicidarte o en hacerte daño físicamente de "
+     "alguna forma?"]
+]
+
 FEEDBACK_RESPONSES = {
     "normal_response":
         [
@@ -143,6 +162,21 @@ class ActionFallback(Action):
         else:
             dispatcher.utter_message(text="No te estoy entendiendo, ¿podrías decirmelo de manera más sencilla?")
             return [SlotSet('fallback_count', tracker.get_slot('fallback_count') + 1.0)]
+
+
+class ActionRephrase(Action):
+
+    def name(self) -> Text:
+        return "action_rephrase_sentence"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        is_asking = bool(tracker.get_slot('is_asking_questions'))
+        current_question = int(tracker.get_slot('question_id')) - 1
+        if is_asking:
+            answer = QUESTIONS_REPHRASE[current_question][randint(0, len(QUESTIONS_REPHRASE[current_question]) - 1)]
+            dispatcher.utter_message(text=answer)
+            return [SlotSet('fallback_count', 0.0)]
+        return []
 
 
 class ActionUpdateScore(Action):

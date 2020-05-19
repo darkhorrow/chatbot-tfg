@@ -36,3 +36,7 @@
 * high
     - action_update_score
     - action_ask_question
+    
+## user does not understand the questions
+* rephrase
+    - action_rephrase_sentence

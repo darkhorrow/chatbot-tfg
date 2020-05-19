@@ -65,3 +65,17 @@
 - de ninguna manera
 - ahora no
 - ahora no puedo
+
+## intent:rephrase
+- no lo entiendo
+- no entiendo
+- no te entiendo
+- ¿qué quieres decir?
+- ¿a qué refieres?
+- ¿podrías decírmelo de otra manera?
+- no sé qué quieres decir
+- ¿a qué te refieres?
+- no sé a qué te refieres
+- dímelo de otra manera
+- repítelo, por favor
+- ¿puedes repetirlo?
