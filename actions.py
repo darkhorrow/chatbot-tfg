@@ -92,7 +92,8 @@ class ActionAskQuestion(Action):
             dispatcher.utter_message(text=self.__choose_answer(current_question))
             if current_question == len(QUESTIONS):
                 return [FollowupAction("action_end_conversation")]
-            dispatcher.utter_message(text=QUESTIONS[current_question])
+            dispatcher.utter_message(text=f"**Pregunta {current_question + 1} de {len(QUESTIONS)}** \n --- \n" +
+                                          QUESTIONS[current_question])
         return [SlotSet('question_id', float(current_question + 1.0)),
                 SlotSet('fallback_count', 0.0)]
 
