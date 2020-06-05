@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="webchat"/>
+        <script src="https://storage.googleapis.com/mrbot-cdn/webchat-v0.8.9.js"></script>
+        <script>
+            localStorage.clear();
+            WebChat.default.init({
+                selector: "#webchat",
+                initPayload: "/start",
+                customData: {}, // arbitrary custom data. Stay minimal as this will be added to the socket
+                storage: "session",
+                socketUrl: "http://localhost:5005",
+                socketPath: "/socket.io/",
+                title: "P.E.P.A",
+                subtitle: "Chatbot de evaluación psicológica",
+                inputTextFieldHint: "Escribe un mensaje aquí"
+            });
+        </script>
+    </body>
+</html>
