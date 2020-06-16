@@ -4,7 +4,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, FollowupAction, Restarted
+from rasa_sdk.events import SlotSet, FollowupAction, ConversationPaused
 
 MAX_FALLBACK = 1
 CUTOFF_POINT = 10
@@ -150,7 +150,7 @@ class ActionEndConversation(Action):
                                    "te recomiendo que si notas cualquier malestar te pongas en contacto con tu " \
                                    "profesional de la salud."
             dispatcher.utter_message(text=score_resolution)
-        return [Restarted()]
+        return [ConversationPaused()]
 
     def __user_needs_evaluation(self, tracker: Tracker) -> bool:
         return int(tracker.get_slot('score_questions')) > CUTOFF_POINT
