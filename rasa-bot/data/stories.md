@@ -15,26 +15,31 @@
 ## ask question low intent
 * low
     - action_update_score
+    - action_give_feedback
     - action_ask_question
     
 ## ask question low-medium intent
 * low-medium
     - action_update_score
+    - action_give_feedback
     - action_ask_question
     
 ## ask question medium intent
 * medium
     - action_update_score
+    - action_give_feedback
     - action_ask_question
     
 ## ask question medium-high intent
 * medium-high
     - action_update_score
+    - action_give_feedback
     - action_ask_question
     
 ## ask question high intent
 * high
     - action_update_score
+    - action_give_feedback
     - action_ask_question
     
 ## user does not understand the questions

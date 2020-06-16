@@ -16,6 +16,7 @@ actions:
   - action_fallback_management
   - action_update_score
   - action_rephrase_sentence
+  - action_give_feedback
 
 slots:
    question_id:

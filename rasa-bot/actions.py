@@ -89,13 +89,22 @@ class ActionAskQuestion(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         current_question = int(tracker.get_slot('question_id'))
         if bool(tracker.get_slot('is_asking_questions')):
-            dispatcher.utter_message(text=self.__choose_answer(current_question))
             if current_question == len(QUESTIONS):
                 return [FollowupAction("action_end_conversation")]
             dispatcher.utter_message(text=f"**Pregunta {current_question + 1} de {len(QUESTIONS)}** \n --- \n" +
                                           QUESTIONS[current_question])
-        return [SlotSet('question_id', float(current_question + 1.0)),
-                SlotSet('fallback_count', 0.0)]
+        return [SlotSet('question_id', float(current_question + 1.0)), SlotSet('fallback_count', 0.0)]
+
+
+class ActionGiveFeedback(Action):
+
+    def name(self) -> Text:
+        return 'action_give_feedback'
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        current_question = int(tracker.get_slot('question_id'))
+        if bool(tracker.get_slot('is_asking_questions')):
+            dispatcher.utter_message(text=self.__choose_answer(current_question))
 
     def __choose_answer(self, current_question) -> Text:
         if current_question == 0 or current_question >= len(QUESTIONS):

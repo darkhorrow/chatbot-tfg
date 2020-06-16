@@ -7,6 +7,8 @@
 - ninguna
 - ningún día
 - en ningún momento
+- rotundamente ninguna vez
+- ninguna vez
 
 ## intent:low-medium
 - pocas veces
@@ -16,6 +18,7 @@
 - pocos días
 - unos pocos días
 - hay días que me siento de esa manera
+- poca
 
 ## intent:medium
 - en ocasiones
@@ -25,6 +28,9 @@
 - algunos días
 - hay días que sí y días que no
 - algunas veces
+- depende
+- pues depende
+- a veces sí, a veces no
 
 ## intent:medium-high
 - un par de veces en semana
@@ -33,6 +39,10 @@
 - a menudo
 - más de la mitad de los días
 - casi todos los días
+- abundantemente
+- bastante
+- bastantes veces
+- con abundancia
 
 ## intent:high
 - todos los días
@@ -41,7 +51,11 @@
 - muchas veces
 - la mayoría de los días
 - demasiadas
-- más de la cuenta 
+- más de la cuenta
+- a diario
+- diariamente
+- las 24 horas del día
+- las 24h del día
 
 ## intent:start
 - comenzar
@@ -58,6 +72,9 @@
 - por supuesto
 - claro
 - claro que sí
+- Sí
+- Si
+- si
 
 ## intent:deny
 - no
