@@ -30,7 +30,7 @@ En segundo lugar, la carpeta [reports-app](https://github.com/darkhorrow/chatbot
 aplicación en Flask que genera informes a partir de los registros almacenados en la base de datos por Rasa, otorgando dicha información
 en un formato más legible.
 
-Finalmente, en [demo-page](https://github.com/darkhorrow/chatbot-tfg/tree/master/demo-page) se encuentra un fichero HTML en blanco 
+Finalmente, en [demo-page](https://github.com/darkhorrow/chatbot-tfg/tree/master/demo-page) se encuentra un fichero HTML en blanco
 con el widget [Rasa Webchat](https://github.com/botfront/rasa-webchat) usado para actuar como interfaz gráfica del chatbot.
 
 ## ¿Cómo usarlo?
@@ -83,6 +83,11 @@ Una vez que tenemos el chatbot listo, podemos habilitar también la aplicación 
 
     cd ../reports-app
     pip install -r requirements.txt
+
+A continuación, si queremos usar un fichero SQLite distinto al que cargamos al ejecutar Rasa antes, debemos abrir el fichero config.py y editar la variable DATABASE para que figure la nueva ruta de la base de datos SQLite.
+
+Una vez cambiado esto o si se dejó el que se sumnistra por defecto, habría que ejecutar la aplicación:
+
     flask run
 
 Si no hubo problemas en la instalación de las dependencias, esta aplicación debería estar disponible en localhost:5000
