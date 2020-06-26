@@ -1,0 +1,218 @@
+[
+  {
+    "text": "jamás",
+    "intent": "low",
+    "intent_prediction": {
+      "name": "high",
+      "confidence": 0.45046094059944153
+    }
+  },
+  {
+    "text": "prácticamente nunca",
+    "intent": "low-medium",
+    "intent_prediction": {
+      "name": "low",
+      "confidence": 0.7512885332107544
+    }
+  },
+  {
+    "text": "hay días que sí y días que no",
+    "intent": "medium",
+    "intent_prediction": {
+      "name": "low-medium",
+      "confidence": 0.889543354511261
+    }
+  },
+  {
+    "text": "a menudo",
+    "intent": "medium-high",
+    "intent_prediction": {
+      "name": "rephrase",
+      "confidence": 0.27936461567878723
+    }
+  },
+  {
+    "text": "más de la cuenta",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.41009923815727234
+    }
+  },
+  {
+    "text": "de acuerdo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "medium",
+      "confidence": 0.7475214004516602
+    }
+  },
+  {
+    "text": "por supuesto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "low-medium",
+      "confidence": 0.5011116862297058
+    }
+  },
+  {
+    "text": "claro que sí",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "medium",
+      "confidence": 0.4606340229511261
+    }
+  },
+  {
+    "text": "hay días que me siento de esa manera",
+    "intent": "low-medium",
+    "intent_prediction": {
+      "name": "medium",
+      "confidence": 0.7373290061950684
+    }
+  },
+  {
+    "text": "muchísimo",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "low",
+      "confidence": 0.4967476725578308
+    }
+  },
+  {
+    "text": "muchas veces",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "medium",
+      "confidence": 0.561073899269104
+    }
+  },
+  {
+    "text": "me parece bien",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.7148018479347229
+    }
+  },
+  {
+    "text": "adelante",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.40927958488464355
+    }
+  },
+  {
+    "text": "nunca",
+    "intent": "low",
+    "intent_prediction": {
+      "name": "low-medium",
+      "confidence": 0.8271514773368835
+    }
+  },
+  {
+    "text": "casi todos los días",
+    "intent": "medium-high",
+    "intent_prediction": {
+      "name": "high",
+      "confidence": 0.9513906240463257
+    }
+  },
+  {
+    "text": "siempre",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.9352507591247559
+    }
+  },
+  {
+    "text": "demasiadas",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.7737547755241394
+    }
+  },
+  {
+    "text": "vale",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "medium",
+      "confidence": 0.48023349046707153
+    }
+  },
+  {
+    "text": "de ninguna manera",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "low",
+      "confidence": 0.9380428791046143
+    }
+  },
+  {
+    "text": "muy pocas veces",
+    "intent": "low",
+    "intent_prediction": {
+      "name": "low-medium",
+      "confidence": 0.721514880657196
+    }
+  },
+  {
+    "text": "alguna que otra vez",
+    "intent": "medium",
+    "intent_prediction": {
+      "name": "low-medium",
+      "confidence": 0.4097614586353302
+    }
+  },
+  {
+    "text": "un par de veces en semana",
+    "intent": "medium-high",
+    "intent_prediction": {
+      "name": "medium",
+      "confidence": 0.48179787397384644
+    }
+  },
+  {
+    "text": "todos los días",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.8590545058250427
+    }
+  },
+  {
+    "text": "nada",
+    "intent": "low",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6191266179084778
+    }
+  },
+  {
+    "text": "en ocasiones",
+    "intent": "medium",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.82657390832901
+    }
+  },
+  {
+    "text": "a diario",
+    "intent": "high",
+    "intent_prediction": {
+      "name": "medium-high",
+      "confidence": 0.4231419861316681
+    }
+  },
+  {
+    "text": "no quiero",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "rephrase",
+      "confidence": 0.894313395023346
+    }
+  }
+]
