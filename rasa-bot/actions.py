@@ -88,11 +88,10 @@ class ActionAskQuestion(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         current_question = int(tracker.get_slot('question_id'))
-        if bool(tracker.get_slot('is_asking_questions')):
-            if current_question == len(QUESTIONS):
-                return [FollowupAction("action_end_conversation")]
-            dispatcher.utter_message(text=f"**Pregunta {current_question + 1} de {len(QUESTIONS)}** \n --- \n" +
-                                          QUESTIONS[current_question])
+        if current_question == len(QUESTIONS):
+            return [FollowupAction("action_end_conversation")]
+        dispatcher.utter_message(text=f"**Pregunta {current_question + 1} de {len(QUESTIONS)}** \n --- \n" +
+                                      QUESTIONS[current_question])
         return [SlotSet('question_id', float(current_question + 1.0)), SlotSet('fallback_count', 0.0)]
 
 
@@ -103,8 +102,7 @@ class ActionGiveFeedback(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         current_question = int(tracker.get_slot('question_id'))
-        if bool(tracker.get_slot('is_asking_questions')):
-            dispatcher.utter_message(text=self.__choose_answer(current_question))
+        dispatcher.utter_message(text=self.__choose_answer(current_question))
 
     def __choose_answer(self, current_question) -> Text:
         if current_question == 0 or current_question >= len(QUESTIONS):
@@ -124,10 +122,8 @@ class ActionStartQuestions(Action):
         return "action_start_questions"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        if not bool(tracker.get_slot('is_asking_questions')):
-            dispatcher.utter_message(text="Muy bien, ¡comencemos!")
-            return [SlotSet('is_asking_questions', True), SlotSet('fallback_count', 0.0)]
-        return []
+        dispatcher.utter_message(text="Muy bien, ¡comencemos!")
+        return [SlotSet('state', 'questions'), SlotSet('fallback_count', 0.0)]
 
 
 class ActionEndConversation(Action):
@@ -136,7 +132,7 @@ class ActionEndConversation(Action):
         return "action_end_conversation"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        is_asking = bool(tracker.get_slot('is_asking_questions'))
+        is_asking = tracker.get_slot('state') == 'questions'
         if is_asking:
             dispatcher.utter_message(text="Gracias por responder a mis preguntas :)")
             if self.__user_needs_evaluation(tracker):
@@ -150,6 +146,9 @@ class ActionEndConversation(Action):
                                    "te recomiendo que si notas cualquier malestar te pongas en contacto con tu " \
                                    "profesional de la salud."
             dispatcher.utter_message(text=score_resolution)
+        else:
+            dispatcher.utter_message(text="Está bien. ¡Espero hablar contigo en otro momento!")
+
         return [ConversationPaused()]
 
     def __user_needs_evaluation(self, tracker: Tracker) -> bool:
@@ -162,7 +161,7 @@ class ActionFallback(Action):
         return "action_fallback_management"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        is_asking = bool(tracker.get_slot('is_asking_questions'))
+        is_asking = tracker.get_slot('state') == 'questions'
         if int(tracker.get_slot('fallback_count') >= MAX_FALLBACK):
             dispatcher.utter_message(
                 text="Sigo sin entenderte. Puedes intentar explicarlo mejor o usar una de las opciones.",
@@ -180,13 +179,10 @@ class ActionRephrase(Action):
         return "action_rephrase_sentence"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        is_asking = bool(tracker.get_slot('is_asking_questions'))
         current_question = int(tracker.get_slot('question_id')) - 1
-        if is_asking:
-            answer = QUESTIONS_REPHRASE[current_question][randint(0, len(QUESTIONS_REPHRASE[current_question]) - 1)]
-            dispatcher.utter_message(text=answer)
-            return [SlotSet('fallback_count', 0.0)]
-        return []
+        answer = QUESTIONS_REPHRASE[current_question][randint(0, len(QUESTIONS_REPHRASE[current_question]) - 1)]
+        dispatcher.utter_message(text=answer)
+        return [SlotSet('fallback_count', 0.0)]
 
 
 class ActionUpdateScore(Action):
@@ -195,5 +191,5 @@ class ActionUpdateScore(Action):
         return "action_update_score"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        return[SlotSet('score_questions', float(tracker.get_slot('score_questions')) +
-                       SCORE_MAP[tracker.latest_message['intent'].get('name')])]
+        return [SlotSet('score_questions', float(tracker.get_slot('score_questions')) +
+                        SCORE_MAP[tracker.latest_message['intent'].get('name')])]

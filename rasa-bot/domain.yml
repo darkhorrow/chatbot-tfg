@@ -28,14 +28,21 @@ slots:
    score_questions:
       type: float
       initial_value: 0.0
-   is_asking_questions:
-      type: bool
+   state:
+      type: categorical
+      values:
+      - intro
+      - questions
+      initial_value: intro
 
 responses:
   utter_introduction:
     - text: "¡Hola! Soy P.E.P.A, un asistente virtual que contribuye al bienestar psicológico de las personas. Mi tarea es analizar tus respuestas y ayudar a los profesionales de la salud con el diagnóstico y el tratamiento de múltiples problemas de salud."
   utter_ask_question_request:
     - text: "¿Puedo realizarle unas pocas preguntas para realizar la evaluación?"
+  utter_not_valid_response:
+    - text: "Lo siento, pero la respuesta que busco implica frecuencia, por ejemplo, 'a menudo'"
+    - text: "Le estoy preguntando con qué frecuencia le sucede, por ejemplo, 'a menudo'"
 
 session_config:
   session_expiration_time: 60
