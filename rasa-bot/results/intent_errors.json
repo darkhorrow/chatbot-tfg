@@ -1,282 +1,18 @@
 [
   {
-    "text": "nunca",
-    "intent": "low",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.9567342400550842
-    }
-  },
-  {
-    "text": "con poca frecuencia",
-    "intent": "low-medium",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.4440355598926544
-    }
-  },
-  {
-    "text": "a veces",
-    "intent": "medium",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.5628613829612732
-    }
-  },
-  {
-    "text": "todos los días",
-    "intent": "high",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.8047171235084534
-    }
-  },
-  {
-    "text": "ok",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "deny",
-      "confidence": 0.307857483625412
-    }
-  },
-  {
-    "text": "okey",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "low",
-      "confidence": 0.3844575881958008
-    }
-  },
-  {
-    "text": "rotundamente ninguna vez",
-    "intent": "low",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.43252331018447876
-    }
-  },
-  {
-    "text": "ninguna vez",
-    "intent": "low",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.863149881362915
-    }
-  },
-  {
-    "text": "prácticamente nunca",
-    "intent": "low-medium",
-    "intent_prediction": {
-      "name": "low",
-      "confidence": 0.8291360139846802
-    }
-  },
-  {
-    "text": "hay días que me siento de esa manera",
-    "intent": "low-medium",
-    "intent_prediction": {
-      "name": "medium",
-      "confidence": 0.7439166307449341
-    }
-  },
-  {
-    "text": "casi siempre",
-    "intent": "medium-high",
-    "intent_prediction": {
-      "name": "medium",
-      "confidence": 0.844416618347168
-    }
-  },
-  {
-    "text": "más de la mitad de los días",
-    "intent": "medium-high",
-    "intent_prediction": {
-      "name": "high",
-      "confidence": 0.9148836731910706
-    }
-  },
-  {
-    "text": "siempre",
-    "intent": "high",
-    "intent_prediction": {
-      "name": "affirm",
-      "confidence": 0.8559760451316833
-    }
-  },
-  {
-    "text": "demasiadas",
-    "intent": "high",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.45380282402038574
-    }
-  },
-  {
     "text": "de acuerdo",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.3320390582084656
+      "name": "answer_question",
+      "confidence": 0.3756817579269409
     }
   },
   {
     "text": "por supuesto",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.31372976303100586
-    }
-  },
-  {
-    "text": "muy pocas veces",
-    "intent": "low",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.5311030745506287
-    }
-  },
-  {
-    "text": "unos pocos días",
-    "intent": "low-medium",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.3326382040977478
-    }
-  },
-  {
-    "text": "de vez en cuando",
-    "intent": "medium",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.23309960961341858
-    }
-  },
-  {
-    "text": "hay días que sí y días que no",
-    "intent": "medium",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.45772528648376465
-    }
-  },
-  {
-    "text": "casi todos los días",
-    "intent": "medium-high",
-    "intent_prediction": {
-      "name": "high",
-      "confidence": 0.7551106810569763
-    }
-  },
-  {
-    "text": "muchas veces",
-    "intent": "high",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.46961095929145813
-    }
-  },
-  {
-    "text": "adelante",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.5784780979156494
-    }
-  },
-  {
-    "text": "de ninguna manera",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "low",
-      "confidence": 0.7965008616447449
-    }
-  },
-  {
-    "text": "en ocasiones",
-    "intent": "medium",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.7924444079399109
-    }
-  },
-  {
-    "text": "a menudo",
-    "intent": "medium-high",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.42450347542762756
-    }
-  },
-  {
-    "text": "con abundancia",
-    "intent": "medium-high",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.4674017131328583
-    }
-  },
-  {
-    "text": "la mayoría de los días",
-    "intent": "high",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.7300063967704773
-    }
-  },
-  {
-    "text": "me parece bien",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "low-medium",
-      "confidence": 0.6863128542900085
-    }
-  },
-  {
-    "text": "claro que sí",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "medium",
-      "confidence": 0.7769472002983093
-    }
-  },
-  {
-    "text": "jamás",
-    "intent": "low",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.8790590167045593
-    }
-  },
-  {
-    "text": "depende",
-    "intent": "medium",
-    "intent_prediction": {
-      "name": "rephrase",
-      "confidence": 0.5745811462402344
-    }
-  },
-  {
-    "text": "pues depende",
-    "intent": "medium",
-    "intent_prediction": {
-      "name": "rephrase",
-      "confidence": 0.4590838551521301
-    }
-  },
-  {
-    "text": "un par de veces en semana",
-    "intent": "medium-high",
-    "intent_prediction": {
-      "name": "medium",
-      "confidence": 0.7177556157112122
-    }
-  },
-  {
-    "text": "más de la cuenta",
-    "intent": "high",
-    "intent_prediction": {
-      "name": "medium-high",
-      "confidence": 0.8732535243034363
+      "name": "answer_question",
+      "confidence": 0.9930866956710815
     }
   },
   {
@@ -284,7 +20,47 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "rephrase",
-      "confidence": 0.8475854992866516
+      "confidence": 0.7007218599319458
+    }
+  },
+  {
+    "text": "me parece bien",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "answer_question",
+      "confidence": 0.9915518760681152
+    }
+  },
+  {
+    "text": "adelante",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "answer_question",
+      "confidence": 0.6718615293502808
+    }
+  },
+  {
+    "text": "A menudo lo pienso",
+    "intent": "answer_question",
+    "intent_prediction": {
+      "name": "rephrase",
+      "confidence": 0.6321386098861694
+    }
+  },
+  {
+    "text": "claro que sí",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "answer_question",
+      "confidence": 0.7792539596557617
+    }
+  },
+  {
+    "text": "de ninguna manera",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "answer_question",
+      "confidence": 0.8682023882865906
     }
   }
 ]

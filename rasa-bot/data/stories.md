@@ -17,47 +17,25 @@
 ## user affirms while asking questions
 * affirm
     - slot{"state" : "questions"}
-    - utter_not_valid_response
+    - action_fallback_management
 
 ## user denies while asking questions
 * deny
     - slot{"state" : "questions"}
-    - utter_not_valid_response
+    - action_fallback_management
     
-## ask question low intent
-* low
+## user answers the current question ok
+* answer_question
     - slot{"state" : "questions"}
     - action_update_score
     - action_give_feedback
     - action_ask_question
+    - slot{"frequency" : null}
     
-## ask question low-medium intent
-* low-medium
-    - slot{"state" : "questions"}
-    - action_update_score
-    - action_give_feedback
-    - action_ask_question
-    
-## ask question medium intent
-* medium
-    - slot{"state" : "questions"}
-    - action_update_score
-    - action_give_feedback
-    - action_ask_question
-    
-## ask question medium-high intent
-* medium-high
-    - slot{"state" : "questions"}
-    - action_update_score
-    - action_give_feedback
-    - action_ask_question
-    
-## ask question high intent
-* high
-    - slot{"state" : "questions"}
-    - action_update_score
-    - action_give_feedback
-    - action_ask_question
+## user somehow answers the intro with no affirmation/denial
+* answer_question
+    - slot{"state" : "intro"}
+    - action_fallback_management
     
 ## user does not understand the questions
 * rephrase

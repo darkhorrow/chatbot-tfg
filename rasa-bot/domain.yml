@@ -1,13 +1,12 @@
 intents:
   - start
-  - low
-  - low-medium
-  - medium
-  - medium-high
-  - high
   - affirm
   - deny
+  - answer_question
   - rephrase
+
+entities:
+  - frequency
 
 actions:
   - action_ask_question
@@ -20,14 +19,22 @@ actions:
 
 slots:
    question_id:
-      type: float
-      initial_value: 0.0
+      type: unfeaturized
+      initial_value: 0
    fallback_count:
-      type: float
-      initial_value: 0.0
+      type: unfeaturized
+      initial_value: 0
    score_questions:
-      type: float
-      initial_value: 0.0
+      type: unfeaturized
+      initial_value: 0
+   frequency:
+      type: categorical
+      values:
+      - low
+      - low-medium
+      - medium
+      - medium-high
+      - high
    state:
       type: categorical
       values:
@@ -40,9 +47,8 @@ responses:
     - text: "¡Hola! Soy P.E.P.A, un asistente virtual que contribuye al bienestar psicológico de las personas. Mi tarea es analizar tus respuestas y ayudar a los profesionales de la salud con el diagnóstico y el tratamiento de múltiples problemas de salud."
   utter_ask_question_request:
     - text: "¿Puedo realizarle unas pocas preguntas para realizar la evaluación?"
-  utter_not_valid_response:
-    - text: "Lo siento, pero la respuesta que busco implica frecuencia, por ejemplo, 'a menudo'"
-    - text: "Le estoy preguntando con qué frecuencia le sucede, por ejemplo, 'a menudo'"
+  utter_fallback:
+    - text: "No te estoy entendiendo, ¿podrías decirmelo de manera más sencilla?"
 
 session_config:
   session_expiration_time: 60
