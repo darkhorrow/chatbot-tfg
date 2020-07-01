@@ -1,6 +1,5 @@
-from flask import Flask, render_template, g, make_response
+from flask import Flask, render_template, g
 import sqlite3
-import pdfkit
 import json
 from config import APP_NAME, DATABASE
 
@@ -51,11 +50,9 @@ def report_by_id(sender_id):
     did_finish = len(end_conversation) > 0
 
     questions_answers = query_db(f"SELECT * FROM events WHERE sender_id = '{sender_id}' AND ((type_name = 'user' AND "
-                                 f"intent_name IN ('low', 'low-medium', 'medium', 'medium-high', 'high')) "
-                                 f"OR(type_name='slot' AND action_name = 'question_id')) ORDER BY id")
-
-    fallback = query_db(f"SELECT * FROM events WHERE sender_id = '{sender_id}' AND type_name = 'action' AND "
-                        f"action_name = 'action_fallback_management' ORDER BY id")
+                                 f"intent_name = 'answer_question') "
+                                 f"OR(type_name='slot' AND action_name = 'question_id')"
+                                 f"OR(type_name='slot' AND action_name = 'frequency')) ORDER BY id")
 
     questions_scores = query_db(f"SELECT * FROM events WHERE sender_id = '{sender_id}' AND type_name = 'slot' AND "
                                 f"action_name = 'score_questions' ORDER BY id")
@@ -73,21 +70,23 @@ def report_by_id(sender_id):
     answers_parsed = []
     scores_parsed = []
     answers_n = []
+    valid_frequencies_id = []
     rephrase_parsed = []
     rephrase_questions_n = []
-    fallback_id = []
     misunderstandings_n = []
     misunderstandings_text = []
 
-    for row in fallback:
-        fallback_id.append(row['id'])
+    for row in questions_answers:
+        if row['action_name'] == 'frequency':
+            if json.loads(row['data'])['value'] in ['low', 'low-medium', 'medium', 'medium-high', 'high']:
+                valid_frequencies_id.append(row['id'])
 
     latest_question = 1
     for row in questions_answers:
         if row['action_name'] == 'question_id':
             latest_question = json.loads(row['data'])['value']
         else:
-            if row['id'] + 1 not in fallback_id:
+            if row['id'] + 1 in valid_frequencies_id:
                 answers_n.append(int(latest_question))
                 answers_parsed.append(json.loads(row['data']))
 
@@ -117,7 +116,7 @@ def report_by_id(sender_id):
             misunderstandings_n.append(int(latest_question))
             misunderstandings_text.append(latest_phrase)
 
-    start_date = start_conversation[0]['date']
+    start_date = start_conversation[0]['date'] if len(start_conversation) > 0 else "Fecha desconocida"
     end_date = end_conversation[0]['date'] if did_finish else ""
 
     return render_template("report.html",
@@ -129,15 +128,6 @@ def report_by_id(sender_id):
                            rephrases=zip(rephrase_questions_n, rephrase_parsed),
                            misunderstanding=zip(misunderstandings_n, misunderstandings_text)
                            )
-
-
-@app.route('/report/<sender_id>/pdf')
-def gen_pdf(sender_id):
-    pdf = pdfkit.from_string(report_by_id(sender_id), False)
-    response = make_response(pdf)
-    response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = f'attachment; filename=informe_{sender_id}.pdf'
-    return response
 
 
 if __name__ == "__main__":

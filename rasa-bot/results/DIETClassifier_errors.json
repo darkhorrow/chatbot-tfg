@@ -1,0 +1,946 @@
+[
+  {
+    "text": "En ningún momento",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 3,
+        "end": 9,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Casi nunca me ocurre, soy muy feliz",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 10,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "frequency",
+        "start": 26,
+        "end": 29,
+        "extractor": "DIETClassifier",
+        "value": "muy"
+      }
+    ]
+  },
+  {
+    "text": "Un par de veces a la semana",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 3,
+        "end": 17,
+        "extractor": "DIETClassifier",
+        "value": "par de veces a"
+      }
+    ]
+  },
+  {
+    "text": "Me sucede casi todos los días",
+    "entities": [
+      {
+        "start": 10,
+        "end": 20,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 10,
+        "end": 29,
+        "extractor": "DIETClassifier",
+        "value": "high",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Bastantes veces, me sofoca",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 15,
+        "extractor": "DIETClassifier",
+        "value": "medium-high",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "frequency",
+        "start": 20,
+        "end": 26,
+        "extractor": "DIETClassifier",
+        "value": "sofoca"
+      }
+    ]
+  },
+  {
+    "text": "Con abundancia",
+    "entities": [
+      {
+        "start": 4,
+        "end": 14,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 14,
+        "extractor": "DIETClassifier",
+        "value": "Con abundancia"
+      }
+    ]
+  },
+  {
+    "text": "Me ocurre muchísimo",
+    "entities": [
+      {
+        "start": 10,
+        "end": 19,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Mucho",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Sólo me sucedió una vez",
+    "entities": [
+      {
+        "start": 16,
+        "end": 23,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 20,
+        "end": 23,
+        "extractor": "DIETClassifier",
+        "value": "vez"
+      }
+    ]
+  },
+  {
+    "text": "Con muy poca frecuencia, me siento bastante animado y con entusiasmo en estos dias",
+    "entities": [
+      {
+        "start": 4,
+        "end": 23,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 4,
+        "end": 23,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "frequency",
+        "start": 35,
+        "end": 43,
+        "extractor": "DIETClassifier",
+        "value": "medium-high",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "frequency",
+        "start": 54,
+        "end": 57,
+        "extractor": "DIETClassifier",
+        "value": "con"
+      },
+      {
+        "entity": "frequency",
+        "start": 78,
+        "end": 82,
+        "extractor": "DIETClassifier",
+        "value": "dias"
+      }
+    ]
+  },
+  {
+    "text": "Ultimamente estoy teniendo algunas dificultades para levantarme de la cama, no me siento muy motivado",
+    "entities": [
+      {
+        "start": 27,
+        "end": 34,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 27,
+        "end": 34,
+        "extractor": "DIETClassifier",
+        "value": "medium",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "frequency",
+        "start": 48,
+        "end": 52,
+        "extractor": "DIETClassifier",
+        "value": "para"
+      }
+    ]
+  },
+  {
+    "text": "No me sucede en ninguna ocasión",
+    "entities": [
+      {
+        "start": 16,
+        "end": 31,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 16,
+        "end": 23,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Rotundamente ninguna vez",
+    "entities": [
+      {
+        "start": 13,
+        "end": 24,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 24,
+        "extractor": "DIETClassifier",
+        "value": "Rotundamente ninguna vez"
+      }
+    ]
+  },
+  {
+    "text": "En pocas ocasiones",
+    "entities": [
+      {
+        "start": 3,
+        "end": 18,
+        "value": "low-medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 18,
+        "extractor": "DIETClassifier",
+        "value": "En pocas ocasiones"
+      }
+    ]
+  },
+  {
+    "text": "Con poca frecuencia",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "low-medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 4,
+        "end": 19,
+        "extractor": "DIETClassifier",
+        "value": "low-medium",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Me ocurre en unos pocos días de la semana",
+    "entities": [
+      {
+        "start": 18,
+        "end": 28,
+        "value": "low-medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Me siento de esa manera a veces",
+    "entities": [
+      {
+        "start": 24,
+        "end": 31,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 10,
+        "end": 12,
+        "extractor": "DIETClassifier",
+        "value": "de"
+      },
+      {
+        "entity": "frequency",
+        "start": 24,
+        "end": 31,
+        "extractor": "DIETClassifier",
+        "value": "medium",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Hay par de días de la semana que sí sucede",
+    "entities": [
+      {
+        "start": 4,
+        "end": 15,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 4,
+        "end": 7,
+        "extractor": "DIETClassifier",
+        "value": "par"
+      }
+    ]
+  },
+  {
+    "text": "Me ocurre más de la cuenta",
+    "entities": [
+      {
+        "start": 10,
+        "end": 26,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "En ningún momento",
+    "entities": [
+      {
+        "start": 3,
+        "end": 9,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 17,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "En esta ultima semana ninguna vez",
+    "entities": [
+      {
+        "start": 22,
+        "end": 33,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 7,
+        "extractor": "DIETClassifier",
+        "value": "En esta"
+      },
+      {
+        "entity": "frequency",
+        "start": 22,
+        "end": 33,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "con frecuencia",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 4,
+        "end": 14,
+        "extractor": "DIETClassifier",
+        "value": "frecuencia"
+      }
+    ]
+  },
+  {
+    "text": "Pues sinceramente, ningún día",
+    "entities": [
+      {
+        "start": 19,
+        "end": 29,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 19,
+        "end": 25,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Pocos días de la semana",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "low-medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 13,
+        "extractor": "DIETClassifier",
+        "value": "Pocos días de"
+      }
+    ]
+  },
+  {
+    "text": "Más bien de vez en cuando diría yo",
+    "entities": [
+      {
+        "start": 9,
+        "end": 25,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 3,
+        "extractor": "DIETClassifier",
+        "value": "Más"
+      },
+      {
+        "entity": "frequency",
+        "start": 9,
+        "end": 15,
+        "extractor": "DIETClassifier",
+        "value": "de vez"
+      }
+    ]
+  },
+  {
+    "text": "Pues depende de lo que me sucede durante el día",
+    "entities": [
+      {
+        "start": 5,
+        "end": 12,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 5,
+        "end": 12,
+        "extractor": "DIETClassifier",
+        "value": "medium",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "frequency",
+        "start": 41,
+        "end": 43,
+        "extractor": "DIETClassifier",
+        "value": "el"
+      }
+    ]
+  },
+  {
+    "text": "En bastantes ocasiones",
+    "entities": [
+      {
+        "start": 3,
+        "end": 22,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 22,
+        "extractor": "DIETClassifier",
+        "value": "En bastantes ocasiones"
+      }
+    ]
+  },
+  {
+    "text": "Bastante",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Con bastante frecuencia",
+    "entities": [
+      {
+        "start": 4,
+        "end": 23,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 13,
+        "end": 23,
+        "extractor": "DIETClassifier",
+        "value": "frecuencia"
+      }
+    ]
+  },
+  {
+    "text": "Bastante dificultad",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "dos o tres veces",
+    "entities": [
+      {
+        "start": 6,
+        "end": 16,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 11,
+        "end": 16,
+        "extractor": "DIETClassifier",
+        "value": "veces"
+      }
+    ]
+  },
+  {
+    "text": "Más bien poca, sólo en la última semana",
+    "entities": [
+      {
+        "start": 9,
+        "end": 13,
+        "value": "low-medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 3,
+        "extractor": "DIETClassifier",
+        "value": "Más"
+      },
+      {
+        "entity": "frequency",
+        "start": 9,
+        "end": 13,
+        "extractor": "DIETClassifier",
+        "value": "low-medium",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "de ninguna manera",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 3,
+        "end": 10,
+        "extractor": "DIETClassifier",
+        "value": "low",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Jamás haría algo así",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 16,
+        "extractor": "DIETClassifier",
+        "value": "Jamás haría algo"
+      }
+    ]
+  },
+  {
+    "text": "En ocasiones creo que son así las cosas",
+    "entities": [
+      {
+        "start": 0,
+        "end": 12,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 3,
+        "end": 12,
+        "extractor": "DIETClassifier",
+        "value": "ocasiones"
+      },
+      {
+        "entity": "frequency",
+        "start": 18,
+        "end": 21,
+        "extractor": "DIETClassifier",
+        "value": "que"
+      }
+    ]
+  },
+  {
+    "text": "Me sucede más de la mitad de los días",
+    "entities": [
+      {
+        "start": 10,
+        "end": 25,
+        "value": "medium-high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 33,
+        "end": 37,
+        "extractor": "DIETClassifier",
+        "value": "días"
+      }
+    ]
+  },
+  {
+    "text": "Me sucede a diario",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Las 24h del día, es constante",
+    "entities": [
+      {
+        "start": 4,
+        "end": 15,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 8,
+        "end": 15,
+        "extractor": "DIETClassifier",
+        "value": "del día"
+      },
+      {
+        "entity": "frequency",
+        "start": 20,
+        "end": 29,
+        "extractor": "DIETClassifier",
+        "value": "constante"
+      }
+    ]
+  },
+  {
+    "text": "Depende del día",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "medium",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 15,
+        "extractor": "DIETClassifier",
+        "value": "Depende del día"
+      }
+    ]
+  },
+  {
+    "text": "Con mucha frecuencia",
+    "entities": [
+      {
+        "start": 4,
+        "end": 20,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 20,
+        "extractor": "DIETClassifier",
+        "value": "Con mucha frecuencia"
+      }
+    ]
+  },
+  {
+    "text": "Las 24 horas del día",
+    "entities": [
+      {
+        "start": 4,
+        "end": 20,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Me ocurre constantemente",
+    "entities": [
+      {
+        "start": 10,
+        "end": 24,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Todo el tiempo",
+    "entities": [
+      {
+        "start": 0,
+        "end": 14,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "frequency",
+        "start": 0,
+        "end": 4,
+        "extractor": "DIETClassifier",
+        "value": "Todo"
+      }
+    ]
+  },
+  {
+    "text": "Continuamente",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "high",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Para nada",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "low",
+        "entity": "frequency"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
