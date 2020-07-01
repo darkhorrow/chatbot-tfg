@@ -1,58 +1,18 @@
 [
   {
-    "text": "de acuerdo",
+    "text": "adelante",
     "intent": "affirm",
     "intent_prediction": {
       "name": "answer_question",
-      "confidence": 0.3756817579269409
+      "confidence": 0.8818901777267456
     }
   },
   {
     "text": "por supuesto",
     "intent": "affirm",
     "intent_prediction": {
-      "name": "answer_question",
-      "confidence": 0.9930866956710815
-    }
-  },
-  {
-    "text": "no quiero",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "rephrase",
-      "confidence": 0.7007218599319458
-    }
-  },
-  {
-    "text": "me parece bien",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "answer_question",
-      "confidence": 0.9915518760681152
-    }
-  },
-  {
-    "text": "adelante",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "answer_question",
-      "confidence": 0.6718615293502808
-    }
-  },
-  {
-    "text": "A menudo lo pienso",
-    "intent": "answer_question",
-    "intent_prediction": {
-      "name": "rephrase",
-      "confidence": 0.6321386098861694
-    }
-  },
-  {
-    "text": "claro que sí",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "answer_question",
-      "confidence": 0.7792539596557617
+      "name": "deny",
+      "confidence": 0.519601583480835
     }
   },
   {
@@ -60,7 +20,23 @@
     "intent": "deny",
     "intent_prediction": {
       "name": "answer_question",
-      "confidence": 0.8682023882865906
+      "confidence": 0.8945592641830444
+    }
+  },
+  {
+    "text": "me parece bien",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "answer_question",
+      "confidence": 0.9997835159301758
+    }
+  },
+  {
+    "text": "no quiero",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "rephrase",
+      "confidence": 0.8934465050697327
     }
   }
 ]

@@ -9,7 +9,7 @@
 - Me sucede [muy pocas veces](frequency:low)
 - [Muy poca](frequency:low)
 - [Muy pocas](frequency:low)
-- Con [muy poca](frequency:low) frecuencia, la verdad
+- Con [muy poca frecuencia](frequency:low), la verdad
 - No me ha sucedido [ninguna vez](frequency:low)
 - No me sucede en [ninguna ocasión](frequency:low)
 - Pues sinceramente, [ningún día](frequency:low)
@@ -65,10 +65,40 @@
 - Las [24h del día](frequency:high), es constante
 - Las [24 horas del día](frequency:high)
 - Me ocurre [constantemente](frequency:high)
-- Me [encanta](frequency) el chocolate
-- Adoro el chocolate
-- Dame el cacao
-- Dame [comida](frequency)
+- [A menudo](frequency:medium-high)
+- [Mucha](frequency:high)
+- [Bastante](frequency:medium-high) dificultad
+- [Depende](frequency:medium), en la TV si me concentro bien
+- Rotundamente [ninguna vez](frequency:low)
+- [Todo el tiempo](frequency:high)
+- [ninguna](frequency:low), duermo muy bien
+- [Mucho](frequency:high)
+- la verdad, guapa, [ninguna](frequency:low).
+- [Continuamente](frequency:high)
+- Con [poca frecuencia](frequency:low-medium)
+- Sólo me sucedió [una vez](frequency:low)
+- En [ningún](frequency:low) momento
+- [Para nada](frequency:low)
+- Con [ninguna](frequency:low)
+- Con [muy poca frecuencia](frequency:low), me siento bastante animado y con entusiasmo en estos dias
+- Con [muy poca frecuencia](frequency:low)
+- En esta ultima semana [ninguna vez](frequency:low)
+- Ultimamente estoy teniendo [algunas](frequency:medium) dificultades para levantarme de la cama, no me siento muy motivado
+- Solo por las mañanas, unas [pocas](frequency:low-medium)
+- dos o [tres veces](frequency:low)
+- [varias veces](frequency:medium)
+- [con frecuencia](frequency:medium-high)
+- [Depende](frequency:medium) del día
+- [Depende](frequency:medium) de lo que suceda
+- Más bien [poca](frequency:low-medium), sólo en la última semana
+- [Poca](frequency:low-medium), diría yo
+- [Poca](frequency:low-medium)
+- [Casi todos los días](frequency:high)
+- La [mayoría de días](frequency:high)
+- La [mayoría de veces](frequency:high)
+- [Algunas veces](frequency:medium) por las noches
+- [Algunas veces](frequency:medium)
+
 
 ## intent:start
 - comenzar
@@ -88,6 +118,8 @@
 - Sí
 - Si
 - si
+- desde luego
+- estoy de acuerdo
 
 ## intent:deny
 - no
@@ -123,6 +155,13 @@
 - 24h del día
 - 24 horas del día
 - constantemente
+- mucha
+- todo el tiempo
+- mucho
+- Continuamente
+- Casi todos los días
+- mayoría de días
+- mayoría de veces
 
 ## synonym:low
 - Nunca
@@ -139,6 +178,10 @@
 - En ningún momento
 - Prácticamente nunca
 - Casi nunca
+- una vez
+- ningún
+- Para nada
+- muy poca frecuencia
 
 ## synonym:low-medium
 - pocas veces
@@ -151,6 +194,9 @@
 - pocos días
 - Algunos días
 - algunos días
+- poca frecuencia
+- Poca
+- poca
 
 ## synonym:medium
 - En ocasiones
@@ -162,6 +208,8 @@
 - par de días
 - depende
 - Depende
+- varias veces
+- algunas veces
 
 ## synonym:medium-high
 - Un par de veces
@@ -175,3 +223,5 @@
 - bastante frecuencia
 - Abundantemente
 - abundancia
+- Bastante
+- con frecuencia

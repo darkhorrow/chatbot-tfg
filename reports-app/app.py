@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g, make_response
+from flask import Flask, render_template, g
 import sqlite3
 import json
 from config import APP_NAME, DATABASE
@@ -116,7 +116,7 @@ def report_by_id(sender_id):
             misunderstandings_n.append(int(latest_question))
             misunderstandings_text.append(latest_phrase)
 
-    start_date = start_conversation[0]['date']
+    start_date = start_conversation[0]['date'] if len(start_conversation) > 0 else "Fecha desconocida"
     end_date = end_conversation[0]['date'] if did_finish else ""
 
     return render_template("report.html",

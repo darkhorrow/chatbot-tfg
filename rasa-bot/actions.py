@@ -139,7 +139,7 @@ class ActionEndConversation(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         is_asking = tracker.get_slot('state') == 'questions'
         if is_asking:
-            dispatcher.utter_message(text="Gracias por responder a mis preguntas :)")
+            dispatcher.utter_message(text="Gracias por responder a mis preguntas 😁")
             if self.__user_needs_evaluation(tracker):
                 score_resolution = "Con la información que me has proporcionado he podido determinar que existe " \
                                    "cierto riesgo de que estés sufriendo un trastorno del ánimo. Por lo tanto, " \
@@ -176,7 +176,7 @@ class ActionFallback(Action):
                 )
             else:
                 dispatcher.utter_message(
-                    text="Sigo sin entenderte y mi configuración actual no es la correcta poder para ayudarte :("
+                    text="Sigo sin entenderte y mi configuración actual no es la correcta para poder para ayudarte :("
                 )
         else:
             dispatcher.utter_message(text="No te estoy entendiendo, ¿podrías decirmelo de manera más sencilla?")
