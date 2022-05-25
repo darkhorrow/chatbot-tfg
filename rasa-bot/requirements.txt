@@ -17,7 +17,7 @@ colorama==0.4.3
 colorclass==2.2.0
 coloredlogs==10.0
 colorhash==1.0.2
-cryptography==2.8
+cryptography==3.3.2
 cycler==0.10.0
 decorator==4.4.2
 dnspython==1.16.0
