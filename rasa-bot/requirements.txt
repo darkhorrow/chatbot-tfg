@@ -85,7 +85,7 @@ PyYAML==5.4
 questionary==1.5.1
 rasa==1.8.1
 rasa-sdk==1.8.1
-redis==3.4.1
+redis==4.4.4
 requests==2.23.0
 requests-oauthlib==1.3.0
 requests-toolbelt==0.9.1
