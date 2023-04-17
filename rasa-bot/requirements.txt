@@ -118,7 +118,7 @@ tqdm==4.31.1
 twilio==6.26.3
 typeguard==2.7.1
 tzlocal==2.0.0
-urllib3==1.25.8
+urllib3==1.26.5
 wcwidth==0.1.8
 webexteamssdk==1.1.1
 websockets==8.1
