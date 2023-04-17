@@ -1,5 +1,5 @@
 cairocffi==1.1.0
-CairoSVG==2.4.2
+CairoSVG==2.5.1
 certifi==2020.4.5.1
 cffi==1.14.0
 click==7.1.2
@@ -8,10 +8,10 @@ defusedxml==0.6.0
 Flask==1.1.2
 html5lib==1.0.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 pdfkit==0.6.1
-Pillow==7.1.2
+Pillow==9.3.0
 pycparser==2.20
 Pyphen==0.9.5
 six==1.15.0
